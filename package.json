@@ -1,0 +1,17 @@
+{
+  "name": "adventofcode-2023",
+  "version": "1.0.0",
+  "description": "## To see the results Run the tests using [Bun](https://bun.sh): `bun run day-{x}/puzzle.ts`.",
+  "main": "index.js",
+  "scripts": {
+    "day": "bun run _template/create.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "@types/node": "^18.11.10"
+  },
+  "devDependencies": {
+    "bun-types": "^1.0.14"
+  }
+}

@@ -1,7 +1,7 @@
 import { Puzzle } from "../utilities/types";
 import { readLine } from "../utilities/utilities";
 
-const numbersFromString = (value: string): number => {
+const getFirstAndLastNumber = (value: string): number => {
   const match = value.replaceAll(/[^0-9]/g, "");
 
   if (!match) {
@@ -14,8 +14,8 @@ const numbersFromString = (value: string): number => {
 export const part1: Puzzle = (input) => {
   let result = 0;
 
-  readLine(input, (value: string) => {
-    result += numbersFromString(value);
+  readLine(input, (line) => {
+    result += getFirstAndLastNumber(line);
   });
 
   return result;
@@ -23,7 +23,7 @@ export const part1: Puzzle = (input) => {
 
 const replacements = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
-const replacer = (input: string): string => {
+const replaceNumberStrings = (input: string): string => {
   for (const [i, value] of replacements.entries()) {
     input = input.replaceAll(value, `${value}${i + 1}${value}`);
   }
@@ -34,9 +34,8 @@ const replacer = (input: string): string => {
 export const part2: Puzzle = (input) => {
   let result = 0;
 
-  readLine(input, (value: string) => {
-    const replacedValue = replacer(value);
-    result += numbersFromString(replacedValue);
+  readLine(input, (line) => {
+    result += getFirstAndLastNumber(replaceNumberStrings(line));
   });
 
   return result;

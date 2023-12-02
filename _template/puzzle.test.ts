@@ -1,35 +1,18 @@
 import { describe, expect, test } from "bun:test";
-import { readInput } from "../utilities/utilities";
+import { readPuzzleInput } from "../utilities/utilities";
 import { part1, part2 } from "./puzzle";
 
-describe("Part I", () => {
-  test("Sample", () => {
-    const target = 0;
-    const result = part1(readInput(import.meta.url, true));
+describe("Day ...", async () => {
+  const sampleInput = await readPuzzleInput(import.meta.url, true);
+  const fullInput = await readPuzzleInput(import.meta.url, false);
 
-    expect(result).toEqual(target);
+  describe("Part I", () => {
+    test("Sample", () => expect(part1(sampleInput)).toEqual(0));
+    test("Puzzle", () => expect(part1(fullInput)).toEqual(0));
   });
 
-  test("Puzzle", () => {
-    const target = 0;
-    const result = part1(readInput(import.meta.url, false));
-
-    expect(result).toEqual(target);
-  });
-});
-
-describe("Part II", () => {
-  test("Sample", () => {
-    const target = 0;
-    const result = part2(readInput(import.meta.url, true));
-
-    expect(result).toEqual(target);
-  });
-
-  test("Puzzle", () => {
-    const target = 0;
-    const result = part2(readInput(import.meta.url, false));
-
-    expect(result).toEqual(target);
+  describe("Part II", () => {
+    test("Sample", () => expect(part2(sampleInput)).toEqual(0));
+    test("Puzzle", () => expect(part2(fullInput)).toEqual(0));
   });
 });

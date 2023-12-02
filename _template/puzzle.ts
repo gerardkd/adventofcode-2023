@@ -4,7 +4,7 @@ import { readLine } from "../utilities/utilities";
 export const part1: Puzzle = (input) => {
   let result = 0;
 
-  readLine(input, (value: string) => {});
+  readLine(input, (line) => {});
 
   return result;
 };
@@ -12,7 +12,7 @@ export const part1: Puzzle = (input) => {
 export const part2: Puzzle = (input) => {
   let result = 0;
 
-  readLine(input, (value: string) => {});
+  readLine(input, (line) => {});
 
   return result;
 };

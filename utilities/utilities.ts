@@ -1,4 +1,3 @@
-import { readFileSync } from "fs";
 import { fileURLToPath } from "node:url";
 import { EOL } from "os";
 
@@ -7,8 +6,9 @@ import { EOL } from "os";
  * @param path {string} path to the file
  * @param sample {boolean} read the sample input instead of the puzzle input
  */
-export const readInput = (path: string, sample = false) => {
-  return readFileSync(fileURLToPath(new URL(sample ? "input_sample.txt" : "input.txt", path)), "utf-8");
+export const readPuzzleInput = async (path: string, sample = false) => {
+  const file = Bun.file(fileURLToPath(new URL(sample ? "input_sample.txt" : "input.txt", path)));
+  return await file.text();
 };
 
 /**
@@ -16,6 +16,6 @@ export const readInput = (path: string, sample = false) => {
  * @param file the file contents to read
  * @param callback the function to run on each line
  */
-export const readLine = (file: string, callback: (value: any, index: number, arr: any[]) => void) => {
+export const readLine = (file: string, callback: (line: string, index: number, arr: any[]) => void) => {
   file.split(EOL).forEach(callback);
 };
